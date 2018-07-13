@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements MainViewPresenter
          mainAdapter.setOnItemClickListener(this);
          recyclerView.setAdapter(mainAdapter);
 
+
          Log.d("GK","setDivisions. Size : "+mainAdapter.getItems().size());
     }
 
@@ -48,8 +49,11 @@ public class MainActivity extends AppCompatActivity implements MainViewPresenter
 
     @Override
     public void onItemClick(int position, View view) {
-        mainPresenter.loadDataAfterClickDivision(position);
-        mainPresenter.goToDistrictActivity();
+        mainPresenter.setGlobalDataAfterClickDivision(position);
+
+
+
+        mainPresenter.goToDistrictActivity(this,demolist);
 
         Log.d("GK","onItemClick");
     }

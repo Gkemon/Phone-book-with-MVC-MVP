@@ -1,7 +1,9 @@
 package binarygeek.phonebookWithMVP.MainView;
 
+import android.content.Context;
 import android.view.View;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import binarygeek.phonebookWithMVP.BasePresenter;
@@ -22,8 +24,8 @@ public class MainViewPresenterContract  {
     }
 
       interface Presenter extends BasePresenter {
-          void  loadDataAfterClickDivision(int pos);
-          void  goToDistrictActivity();
+          void setGlobalDataAfterClickDivision(int pos);
+          void  goToDistrictActivity(Context context, ArrayList<String> items);
       }
 
 }
