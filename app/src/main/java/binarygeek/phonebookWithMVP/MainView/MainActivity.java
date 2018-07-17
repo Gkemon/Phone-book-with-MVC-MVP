@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements MainViewPresenter
     public void onItemClick(int position, View view) {
         mainPresenter.setGlobalDataAfterClickDivision(position);
 
+
+        //এখানে ডাটাবেজ থেকে জেলা এনে জেলার এরেলিস্ট ইনপুট করে দে।
         mainPresenter.goToDistrictActivity(this,);
 
         Log.d("GK","onItemClick");
