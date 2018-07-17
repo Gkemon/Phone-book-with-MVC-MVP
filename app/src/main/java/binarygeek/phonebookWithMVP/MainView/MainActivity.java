@@ -51,9 +51,7 @@ public class MainActivity extends AppCompatActivity implements MainViewPresenter
     public void onItemClick(int position, View view) {
         mainPresenter.setGlobalDataAfterClickDivision(position);
 
-
-
-        mainPresenter.goToDistrictActivity(this,demolist);
+        mainPresenter.goToDistrictActivity(this,);
 
         Log.d("GK","onItemClick");
     }
