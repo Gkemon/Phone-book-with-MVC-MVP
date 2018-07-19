@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements MainViewPresenter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         UIinitialization();
-        mainPresenter = new  MainPresenter(this);
+        mainPresenter = new  MainPresenter(this,this);
 
     }
 
@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity implements MainViewPresenter
         mainPresenter.setGlobalDataAfterClickDivision(position);
 
 
+
         //এখানে ডাটাবেজ থেকে জেলা এনে জেলার এরেলিস্ট ইনপুট করে দে।
-        mainPresenter.goToDistrictActivity(this,);
+        //mainPresenter.goToDistrictActivity(this,);
 
         Log.d("GK","onItemClick");
     }
