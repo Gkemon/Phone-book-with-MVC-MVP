@@ -1,15 +1,14 @@
 package binarygeek.phonebookWithMVP.MainView;
 
-import android.content.Context;
-import android.util.Log;
+import android.app.Activity;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import binarygeek.phonebookWithMVP.Data.Constants;
 import binarygeek.phonebookWithMVP.Data.DataController;
-import binarygeek.phonebookWithMVP.Data.Database;
-import binarygeek.phonebookWithMVP.Data.MyDatabase;
+import binarygeek.phonebookWithMVP.Data.sqliteAssetHelper;
 import binarygeek.phonebookWithMVP.Utils.DialogBuilder;
 
 /**
@@ -20,20 +19,16 @@ public class MainPresenter implements MainViewPresenterContract.Presenter {
 
     public MainViewPresenterContract.MainView mainView;
     public DataController dataController;
-    public DatabaseQueryClass databaseQueryClass;
-    MyDatabase myDatabase;
-    public Context context;
+    public sqliteAssetHelper mDatabaseHelper;
+    public Activity context;
+    public String district,thana;
 
-     public MainPresenter (MainViewPresenterContract.MainView mainView, Context context){
+     public MainPresenter (MainViewPresenterContract.MainView mainView, Activity context){
          this.mainView=mainView;
+         this.context=context;
+
          dataController = new DataController();
-
-         //databaseQueryClass=new DatabaseQueryClass(context);
-
-         myDatabase =new MyDatabase(context);
-
-         myDatabase.getAllDistrict(Constants.RajshahiDivison);
-
+         mDatabaseHelper =new sqliteAssetHelper(context);
 
          mainView.setDivisions(Arrays.asList(Constants.DhakaDivison,
                  Constants.ChittagoanDivison,
@@ -60,17 +55,43 @@ public class MainPresenter implements MainViewPresenterContract.Presenter {
     @Override
     public void setGlobalDataAfterClickDivision(int pos) {
 
-        myDatabase.getAllDistrict(Constants.RajshahiDivison);
+
 
         if(pos==0){
-            Log.d("GK","Division name :"+Database.getDataOfDhakaDivision().divisionName);
-             dataController.setDivision(Database.getDataOfDhakaDivision());
-         }
+            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.DhakaDivison));
+         }else if (pos == 1){
+            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.ChittagoanDivison));
+        }else if (pos == 2){
+            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.BarishalDivison));
+        }else if (pos == 3){
+            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.SylhetDivison));
+        }else if (pos == 4){
+            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.RajshahiDivison));
+        }else if (pos == 5){
+            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.RangpureDivison));
+        }else if (pos == 6){
+            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.MymansinghDivison));
+        }else if (pos == 7){
+            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.KhulnaDivison));
+        }
+
+        if(district!=null){
+            thana=createDialog(context,mDatabaseHelper.getAllThana(district));
+        }
+
+        if(thana!=null) Toast.makeText(context,"Thana :"+thana,Toast.LENGTH_LONG).show();
+
+
 
     }
 
+
     @Override
-    public void goToDistrictActivity(Context context, ArrayList<String> items) {
-        DialogBuilder.buildDialog(context,items);
+    public String createDialog(Activity activity, ArrayList<String> items) {
+
+         if(items!=null){
+             return DialogBuilder.buildDialog(activity,items);
+         }
+         else return null;
     }
 }

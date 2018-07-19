@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.util.Log;
 
-import java.net.ContentHandler;
 import java.util.ArrayList;
 
 public
@@ -41,7 +40,7 @@ class DialogBuilder {
                     }
 
                 })
-                .setPositiveButton("Report", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Go", new DialogInterface.OnClickListener() {
                     @Override
                     public
                     void onClick(DialogInterface dialogInterface, int i) {

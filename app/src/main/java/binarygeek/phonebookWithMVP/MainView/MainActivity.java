@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import java.util.List;
@@ -41,8 +40,6 @@ public class MainActivity extends AppCompatActivity implements MainViewPresenter
          mainAdapter.setOnItemClickListener(this);
          recyclerView.setAdapter(mainAdapter);
 
-
-         Log.d("GK","setDivisions. Size : "+mainAdapter.getItems().size());
     }
 
 
@@ -50,13 +47,6 @@ public class MainActivity extends AppCompatActivity implements MainViewPresenter
     @Override
     public void onItemClick(int position, View view) {
         mainPresenter.setGlobalDataAfterClickDivision(position);
-
-
-
-        //এখানে ডাটাবেজ থেকে জেলা এনে জেলার এরেলিস্ট ইনপুট করে দে।
-        //mainPresenter.goToDistrictActivity(this,);
-
-        Log.d("GK","onItemClick");
     }
 
     @Override
