@@ -25,7 +25,8 @@ public class MainViewPresenterContract  {
 
       interface Presenter extends BasePresenter {
           void setGlobalDataAfterClickDivision(int pos);
-          String createDialog(Activity activity, ArrayList<String> items);
+          void createDialog(Activity activity, ArrayList<String> items,String flagForInput);//flagForInput is the flag by which we can know what we want to display for input.District,thana,police etc.
+
       }
 
 }

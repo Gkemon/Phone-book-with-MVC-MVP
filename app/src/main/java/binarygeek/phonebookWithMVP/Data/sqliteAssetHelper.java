@@ -24,6 +24,10 @@ public class sqliteAssetHelper extends SQLiteAssetHelper {
         this.context=context;
     }
 
+    public static sqliteAssetHelper getInstance(Context context){
+        return new sqliteAssetHelper(context);
+    }
+
     public ArrayList<String> getAllDistrict(String division ){
         SQLiteDatabase db=getWritableDatabase();
 

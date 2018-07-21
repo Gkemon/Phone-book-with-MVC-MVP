@@ -50,5 +50,13 @@ public class DataController extends Application {
     }
 
 
-
+//    public String keyWordFromDialoge;
+//
+//    public String getKeyWordFromDialoge() {
+//        return keyWordFromDialoge;
+//    }
+//
+//    public void setKeyWordFromDialoge(String keyWordFromDialoge) {
+//        this.keyWordFromDialoge = keyWordFromDialoge;
+//    }
 }

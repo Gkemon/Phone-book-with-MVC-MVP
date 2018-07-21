@@ -1,23 +1,32 @@
 package binarygeek.phonebookWithMVP.Utils;
 
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.util.Log;
 
 import java.util.ArrayList;
 
+import binarygeek.phonebookWithMVP.Data.Constants;
+import binarygeek.phonebookWithMVP.Data.DataController;
+import binarygeek.phonebookWithMVP.Data.sqliteAssetHelper;
+
 public
 class DialogBuilder {
 
     public static CharSequence selectedItem;
-
-    public static String buildDialog(Context context, final ArrayList<String>itemList) {
+    public static DataController dataController;
+    public static  void buildDialog(final Activity activity, final ArrayList<String>itemList, final String flag) {
 
        final CharSequence[] items = itemList.toArray(new CharSequence[itemList.size()]);
         int itemSelected = 0;
 
-        new AlertDialog.Builder(context)
+        selectedItem=items[0];
+
+
+        dataController = (DataController)activity.getApplicationContext();
+
+        new AlertDialog.Builder(activity)
 
                 .setSingleChoiceItems(items, itemSelected, new DialogInterface.OnClickListener() {
                     @Override
@@ -45,12 +54,19 @@ class DialogBuilder {
                     public
                     void onClick(DialogInterface dialogInterface, int i) {
 
+                        if (flag.equals(Constants.flagDistrict)) {
+                            dataController.setDistrict(selectedItem.toString());
+                            buildDialog(activity, sqliteAssetHelper.getInstance(activity).getAllThana(selectedItem.toString()),Constants.flagThana);
+                        }
+                        else if(flag.equals(Constants.flagThana)){
+                            dataController.setThana(selectedItem.toString());
+                            buildDialog(activity, sqliteAssetHelper.getInstance(activity).getAllThana(selectedItem.toString()),Constants.flagThana);
+                        }
                     }
-
                 })
                 .show();
 
-        return "";
+        Log.d("GK","Keyword :"+dataController.getDistrict());
 
     }
 

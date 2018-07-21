@@ -58,40 +58,39 @@ public class MainPresenter implements MainViewPresenterContract.Presenter {
 
 
         if(pos==0){
-            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.DhakaDivison));
+            createDialog(context,mDatabaseHelper.getAllDistrict(Constants.DhakaDivison),Constants.flagDistrict);
          }else if (pos == 1){
-            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.ChittagoanDivison));
+            createDialog(context,mDatabaseHelper.getAllDistrict(Constants.ChittagoanDivison),Constants.flagDistrict);
         }else if (pos == 2){
-            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.BarishalDivison));
+            createDialog(context,mDatabaseHelper.getAllDistrict(Constants.BarishalDivison),Constants.flagDistrict);
         }else if (pos == 3){
-            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.SylhetDivison));
+            createDialog(context,mDatabaseHelper.getAllDistrict(Constants.SylhetDivison),Constants.flagDistrict);
         }else if (pos == 4){
-            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.RajshahiDivison));
+            createDialog(context,mDatabaseHelper.getAllDistrict(Constants.RajshahiDivison),Constants.flagDistrict);
         }else if (pos == 5){
-            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.RangpureDivison));
+            createDialog(context,mDatabaseHelper.getAllDistrict(Constants.RangpureDivison),Constants.flagDistrict);
         }else if (pos == 6){
-            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.MymansinghDivison));
+            createDialog(context,mDatabaseHelper.getAllDistrict(Constants.MymansinghDivison),Constants.flagDistrict);
         }else if (pos == 7){
-            district=createDialog(context,mDatabaseHelper.getAllDistrict(Constants.KhulnaDivison));
+            createDialog(context,mDatabaseHelper.getAllDistrict(Constants.KhulnaDivison),Constants.flagDistrict);
         }
+
+
 
         if(district!=null){
-            thana=createDialog(context,mDatabaseHelper.getAllThana(district));
+            createDialog(context,mDatabaseHelper.getAllThana(district),Constants.flagThana);
         }
 
-        if(thana!=null) Toast.makeText(context,"Thana :"+thana,Toast.LENGTH_LONG).show();
 
+        if(thana!=null) Toast.makeText(context,"Thana :"+thana,Toast.LENGTH_LONG).show();
 
 
     }
 
 
     @Override
-    public String createDialog(Activity activity, ArrayList<String> items) {
-
-         if(items!=null){
-             return DialogBuilder.buildDialog(activity,items);
-         }
-         else return null;
+    public void createDialog(Activity activity, ArrayList<String> items,String flag) {
+          DialogBuilder.buildDialog(activity,items,flag);
     }
+
 }
