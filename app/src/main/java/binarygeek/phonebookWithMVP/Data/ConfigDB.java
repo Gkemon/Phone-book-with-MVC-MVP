@@ -21,6 +21,7 @@ public class ConfigDB {
     public static String COLUMN_THANA="thana";
 
     public static String whereDistrict_is_ ="division=";
+    public static String whereThana_is_="thana=";
 
 
 }

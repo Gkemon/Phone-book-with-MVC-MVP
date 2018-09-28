@@ -60,7 +60,7 @@ class DialogBuilder {
                         }
                         else if(flag.equals(Constants.flagThana)){
                             dataController.setThana(selectedItem.toString());
-                            buildDialog(activity, sqliteAssetHelper.getInstance(activity).getAllThana(selectedItem.toString()),Constants.flagThana);
+                            buildDialog(activity, sqliteAssetHelper.getInstance(activity).getPoliceOfficer(selectedItem.toString()),Constants.flagThana);
                         }
                     }
                 })

@@ -104,4 +104,42 @@ public class sqliteAssetHelper extends SQLiteAssetHelper {
         return null;
     }
 
+    public ArrayList<String> getPoliceOfficer(String thana){
+        SQLiteDatabase db=getWritableDatabase();
+
+        Cursor cursor = null;
+        try {
+
+            String[] projection = {
+                    ConfigDB.COLUMN_NAME};
+
+            //TODO: First argument is true for getting distinct element
+
+            cursor = db.query(true,ConfigDB.TABLE_POLICE, projection,ConfigDB.whereThana_is_+"'"+thana+"'", null, null, null, null,null);
+
+
+
+            if(cursor!=null)
+                if(cursor.moveToFirst()){
+                    ArrayList<String> policeList = new ArrayList<>();
+                    do {
+                        cursor.getColumnIndex(ConfigDB.COLUMN_NAME);
+                        policeList.add(cursor.getString(cursor.getColumnIndex(ConfigDB.COLUMN_NAME)));
+
+                        Log.d("GK",cursor.getString(cursor.getColumnIndex(ConfigDB.COLUMN_NAME))+" police officer");
+                    }   while (cursor.moveToNext());
+
+                    return policeList;
+                }
+        } catch (Exception e){
+            Log.d("GK","ERROR :"+ e);
+        } finally {
+            if(cursor!=null)
+                cursor.close();
+            db.close();
+        }
+
+        return null;
+    }
+
 }
