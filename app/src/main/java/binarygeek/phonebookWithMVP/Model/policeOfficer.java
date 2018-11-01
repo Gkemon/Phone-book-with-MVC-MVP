@@ -8,18 +8,63 @@ import java.util.ArrayList;
 
 public class policeOfficer {
     public String policeOfficerName;
-    public ArrayList<String> phoneNumberList;
-    public ArrayList<String> emailList;
 
-    public ArrayList<String> getTelephoneNumberList() {
-        return telephoneNumberList;
+    public String getThana() {
+        return thana;
     }
 
-    public void setTelephoneNumberList(ArrayList<String> telephoneNumberList) {
-        this.telephoneNumberList = telephoneNumberList;
+    public void setThana(String thana) {
+        this.thana = thana;
     }
 
-    public ArrayList<String> telephoneNumberList;
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getPhone1() {
+        return phone1;
+    }
+
+    public void setPhone1(String phone1) {
+        this.phone1 = phone1;
+    }
+
+    public String getPhone2() {
+        return phone2;
+    }
+
+    public void setPhone2(String phone2) {
+        this.phone2 = phone2;
+    }
+
+    public String getPhone3() {
+        return phone3;
+    }
+
+    public void setPhone3(String phone3) {
+        this.phone3 = phone3;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String thana;
+    public String district;
+    public String phone1;
+    public String phone2;
+    public String phone3;
+    public String email;
+
+
 
     public String getPoliceOfficerName() {
         return policeOfficerName;
@@ -29,19 +74,4 @@ public class policeOfficer {
         this.policeOfficerName = policeOfficerName;
     }
 
-    public ArrayList<String> getPhoneNumberList() {
-        return phoneNumberList;
-    }
-
-    public void setPhoneNumberList(ArrayList<String> phoneNumberList) {
-        this.phoneNumberList = phoneNumberList;
-    }
-
-    public ArrayList<String> getEmailList() {
-        return emailList;
-    }
-
-    public void setEmailList(ArrayList<String> emailList) {
-        this.emailList = emailList;
-    }
 }

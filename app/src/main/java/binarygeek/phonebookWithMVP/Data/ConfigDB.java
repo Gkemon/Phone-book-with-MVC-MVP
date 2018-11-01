@@ -12,7 +12,7 @@ public class ConfigDB {
     public static final String TABLE_POLICE="Police_officers";
     public static final String COLUMN_DISTRICTS="district";
     public static String COLUMN_DIVISION="division";
-    public static String COLUMN_ID="_id";
+    public static String COLUMN_ID="police_id";
     public static String COLUMN_NAME="name";
     public static String COLUMN_PHONE_1="phone1";
     public static String COLUMN_PHONE_2="phone2";
@@ -20,8 +20,11 @@ public class ConfigDB {
     public static String COLUMN_EMAIL="email";
     public static String COLUMN_THANA="thana";
 
-    public static String whereDistrict_is_ ="division=";
+    public static String whereDistrict_is_ ="district=";
+    public static String whereDivision_is_ ="district=";
     public static String whereThana_is_="thana=";
+    public static String whereName_is_="name=";
+    public static String whereID_is_="police_id=";
 
 
 }

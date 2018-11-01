@@ -2,21 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="binarygeek.phonebookWithMVP">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+
     </uses-permission>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE">
-    </uses-permission>
 
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".Data.DataController"
         android:allowBackup="true"
-        android:name="binarygeek.phonebookWithMVP.Data.DataController"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="binarygeek.phonebookWithMVP.MainView.MainActivity">
+        <activity android:name=".MainView.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +30,8 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="897e3f9961d842fa34815f8cbd3472b27627df44" />
+
+        <activity android:name=".PoliceStatioDetailsView.PoliceStationDetailsActivity"></activity>
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
