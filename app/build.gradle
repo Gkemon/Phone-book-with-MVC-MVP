@@ -17,6 +17,7 @@ repositories {
 
 android {
     compileSdkVersion 26
+
     defaultConfig {
         applicationId "binarygeek.phonebook"
         minSdkVersion 15

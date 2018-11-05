@@ -47,6 +47,7 @@
     </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_call_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -60,6 +61,7 @@
             android:textStyle="bold" />
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_call_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -73,6 +75,7 @@
             android:textStyle="bold" />
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_call_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -85,6 +88,7 @@
             android:textSize="16sp"
             android:textStyle="bold" />
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_email_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -93,6 +97,47 @@
             android:drawableStart="@drawable/ic_email_black_24dp"
             android:padding="10dp"
             android:text="ইমেইল করুন"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_sms_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_button_light_blue"
+            android:drawableLeft="@drawable/ic_message_24dp"
+            android:padding="10dp"
+            android:text="এস এম এস করুন (ফোন  নং -১)"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_sms_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_button_light_blue"
+            android:drawableLeft="@drawable/ic_message_24dp"
+            android:padding="10dp"
+            android:text="এস এম এস করুন (ফোন  নং -২)"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_sms_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_button_light_blue"
+            android:drawableLeft="@drawable/ic_message_24dp"
+            android:padding="10dp"
+            android:text="এস এম এস করুন (ফোন  নং -৩)"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="16sp"
