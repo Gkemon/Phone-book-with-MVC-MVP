@@ -28,6 +28,7 @@ public class PoliceStationDetailsActivity extends AppCompatActivity {
 
 
 
+
             policeOfficer policeOfficer = new policeOfficer();
             policeOfficer = sqliteAssetHelper.getInstance(PoliceStationDetailsActivity.this).getPoliceObject(getIntent().getIntExtra("ID", -1));
 
